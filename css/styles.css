@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --lightCyan : hsla(179, 62%, 43%, 0.75);
+    --yellow: hsl(71, 73%, 54%);
+    --gray: hsl(204, 43%, 93%);
+    --blue: hsl(218, 22%, 67%);
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    color: var(--cyan);
+    font-size: 20px;
+}
+
+h2{
+    font-size: 18px;
+}
+
+h3{
+    font-size: 16px;
+    color: var(--yellow);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+    line-height: 1.5rem;
+    background: var(--gray);
+}
+
+
+.container__grid{
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "price"
+    "why";
+    box-shadow: 0px 0px 10px var(--blue);
+    width: 90%;
+}
+
+
+.grid__title,
+.grid__price,
+.grid__why{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+    padding: 25px;
+    height: 100%;
+}
+
+.grid__title{
+    background-color: white;
+    color: var(--blue);
+    grid-area: title;
+}
+
+.grid__price{
+    color: var(--gray);
+    background-color: var(--cyan);
+    font-size: 16px;
+    grid-area: price;
+}
+
+.price{
+    font-size: 30px;
+}
+
+.month{
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+.btn{
+    background: var(--yellow);
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 2px 10px gray;
+    cursor: pointer;
+}
+
+.btn:hover{
+    filter:saturate(2)
+}
+
+
+.grid__why{
+    color: var(--gray);
+    background-color: var(--lightCyan);
+    justify-content: stretch;
+    grid-area: why;
+}
+
+.grid__why ul{
+    list-style: none;
+    opacity: 0.75;
+    line-height: 1.35rem;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media (min-width: 1000px) {
+    .container__grid{
+        width: 60%;
+        grid-template-areas: 
+        "title title"
+        "price why";
+    }
+    
+    .grid__title{
+        column-span: 2;
+    }
+
+}
